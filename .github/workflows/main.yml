@@ -32,8 +32,8 @@ steps:
 # Install dependencies
 - name: Install dependencies
   run: |
-  python -m pip install --upgrade pip
-  pip install -r requirements.txt
+    python -m pip install --upgrade pip
+    pip install -r requirements.txt
 # Run our unit tests using the test application
 - name: Run unit tests
   run: |
@@ -50,6 +50,6 @@ steps:
   python-version: "3.9"
 - name: Replace file in deploy directory
   run: |
-  cp /root/actions-runner/_work/CD/main.py /root/farm
-  cd /root/farm
-  cat main.py
+    cp /root/actions-runner/_work/CD/main.py /root/farm
+    cd /root/farm
+    cat main.py
