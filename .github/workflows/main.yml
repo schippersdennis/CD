@@ -53,7 +53,7 @@ jobs:
       - name: Replace file in deploy directory
         run: |
           cp /root/actions-runner/_work/CD/CD/main.py /home/farm
-          cp /root/actions-runner/_work/CD/CD/templates /home/farm
+          cp -r /root/actions-runner/_work/CD/CD/templates /home/farm
           cd /home/farm
           cat main.py
 
