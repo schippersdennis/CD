@@ -41,7 +41,7 @@ jobs:
   
   deploy:
     needs: test
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     
     steps:
       - name: Checkout repository
@@ -53,6 +53,7 @@ jobs:
       - name: Replace file in deploy directory
         run: |
           cp /root/actions-runner/_work/CD/CD/main.py /home/farm
+          cp /root/actions-runner/_work/CD/CD/templates /home/farm
           cd /home/farm
           cat main.py
 
