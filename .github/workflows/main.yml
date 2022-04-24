@@ -39,7 +39,7 @@ jobs:
         run: |
           python test_lib.py
   
-    deploy:
+  deploy:
     needs: test
     runs-on: self-hosted
     
