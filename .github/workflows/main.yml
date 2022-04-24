@@ -55,6 +55,15 @@ jobs:
           cp /root/actions-runner/_work/CD/CD/main.py /home/farm
           cd /home/farm
           cat main.py
+    
+  restart:
+    needs: deploy
+    runs-on: self-hosted
+    
+    steps:
+      - name: restart service
+        run: |
           gunicorn -w 4 main:app
+
     
 
