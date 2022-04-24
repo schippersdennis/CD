@@ -1,15 +1,30 @@
-# Import what we need from flask
-from flask import Flask, render_template, redirect, url_for
+from flask import Flask, render_template, request
+from helpers import addition, subtraction, multiplication, division
 
-# Create a Flask app inside `app`
 app = Flask(__name__)
 
-# Assign a function to be called when the path `/` is requested
-@app.route("/")
-def index():
-    return render_template("index.html", title="Index")
 
 
-@app.route("/count")
-def counter():
-    return render_template("counter.html", title="Counter")
+@app.route('/')
+def welcome():
+    return render_template('index.html')
+
+@app.route('/result', methods=['POST'])
+def result():
+    var_1 = request.form.get("var_1", type=int)
+    var_2 = request.form.get("var_2", type=int)
+    operation = request.form.get("operation")
+    if(operation == 'Addition'):
+        result = addition(var_1, var_2)
+    elif(operation == 'Subtraction'):
+        result = subtraction(var_1, var_2)
+    elif(operation == 'Multiplication'):
+        result = multiplication(var_1, var_2)
+    elif(operation == 'Division'):
+        result = division(var_1, var_2)
+    else:
+        result = 'INVALID CHOICE'
+    entry = result
+    return render_template('sum.html', entry=entry)
+
+
