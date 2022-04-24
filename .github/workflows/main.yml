@@ -55,5 +55,7 @@ jobs:
           cp /root/actions-runner/_work/CD/CD/main.py /home/farm
           cd /home/farm
           cat main.py
+          pkill gunicorn
+          gunicorn main:app
     
 
