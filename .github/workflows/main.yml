@@ -37,7 +37,7 @@ steps:
 # Run our unit tests using the test application
 - name: Run unit tests
   run: |
-  python test_lib.py
+    python test_lib.py
   
 build:
 needs: test
