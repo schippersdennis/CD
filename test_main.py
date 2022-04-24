@@ -2,7 +2,7 @@ from helpers import addition, subtraction, multiplication, division
 
 
 def test_addition():
-    assert addition(2, 2) == 5
+    assert addition(2, 2) == 4
     assert addition(2000, 20) == 2020
     assert addition(648, 2) == 650
     assert addition(12002, 2) == 12004
