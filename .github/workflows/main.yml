@@ -63,7 +63,8 @@ jobs:
     steps:
       - name: restart service
         run: |
-          gunicorn -w 4 main:app
+          pkill gunicorn
+          gunicorn main:app
 
     
 
