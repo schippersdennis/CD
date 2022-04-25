@@ -10,7 +10,7 @@ def test_addition():
 
 
 def test_subtraction():
-    assert subtraction(20, 5) == 14
+    assert subtraction(20, 5) == 15
     assert subtraction(200, 20) == 180
     assert subtraction(648, 2) == 646
     assert subtraction(90002, 2) == 90000
